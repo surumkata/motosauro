@@ -1,0 +1,99 @@
+t3
+
+Introdução
+
+  Neste ficheiro estão contidas as funções referentes à construção de um mapa, executada por um bulldozer.
+  O bulldozer cumpre esta tarefa através das instruções que lhe são fornecidas.
+  O objetivo é percorrer que essa transformação seja completada usando o mínimo de instruções possíveis.
+  Para juntar um conjunto de instruções que construa o mapa dado, temos à disposição as instruções básicas: Anda, Sobe, Desce; bem como os artifícios: Repete e Teleporta.
+
+Objetivos
+
+  A base desta solução passa por transformar o mapa numa sequência de instruções básica, ineficaz e repetitiva (desconstroiMapa/Pista/Peca), mas que facilita a restante resolução.
+  A esta primeira lista de instruções são aplicados diferentes processos:
+    A procura de padrões que se repitam horizontalmente, ou seja, na mesma pista(repeteHorPad).
+      XXXXXXXXXXXXXXXX      NAO SEI EXPLICAR 
+    A procura de padrões verticais, ou seja, peças que se repitam num mesmo índice em várias pistas distintas 
+      XXXXXXXXXXXXXXXX      NAO SEI EXPLICAR
+    Esta é sempre seguida da procura de padrões horizontais, para minimizar o número de instruções usadas.
+    Por vezes a existência de padrões verticais impossibilita que certos padrões horizontais sejam descobertos, devido à alteracão de certas instruções. 
+    É por isso usada uma comparação (comparaComp) entre o número de instruções usadas com e sem os padrões verticais, sendo escolhida a menor opção.
+
+Conclusão
+
+  A taxa de compressão obtida é bastante aceitável.
+  Esta deve-se em grande parte ao facto de sermos capazes de encontrar padroẽs mistos, ao invés de padrões apenas com a mesma peça repetida.
+  A pequena comparação no final contribui também que a compressão final é sempre a melhor de que a nossa tarefa é capaz.
+  Numa nota negativa, não fomos capazes de implementar a intrução Teleporta, pelo menos de maneira útil. 
+  Concluindo, o resultado obtido nesta tarefa foi satisfatório, sendo que o único problema é não termos sido capazes de implementar a teleporta.  
+
+
+t5
+
+{-
+
+Introdução
+  
+  Este ficheiro contém a implementação da Tarefa 5, ou seja do jogo em si, utilizando a biblioteca Gloss, e as restantes tarefas do projeto.
+  O objetivo seria criar uma interface gráfica que permita jogar o jogo 
+
+Objetivos
+
+  Alguns dos nossos objetivos nesta tarefa eram:
+    Ter mapas pré-construídos, que fornecemos ao programa diretamente, bem como mapas gerados aleatoreamente, graças à Tarefa 1 e à função Gera
+    Ter quatros jogadores jogáveis, o que se tornou difícil, devido ao espaço limitado num teclado.
+    Implementar o nosso bot, e fazê-lo jogar por todos os jogadores não controlados.
+    Implementar o jogo em si. Isto inclui:
+      Importar imagens referentes a cada elemento do jogo(jogadores, peças, backgrounds, etc,..).
+      Desenhar essas peças de acordo com o estado do jogo(conjunto de funções desenha).
+      Fazer com que o jogo reaja aos imputs do jogador.
+      Fazer com que as jogadas, quer do jogador, quer do bot, afetem o jogo de forma correta, usando a Tarefa 2.
+      Fazer com que o jogo reaja corretamente à passagem do tempo, usando a Tarefa 4.
+      Mostrar toda a informação relevante ao jogo no ecrã(munições, cronómetro, cores dos jogadores, etc,..).
+    Implementar menus simples e intuítivos.
+    Manter um design original e limpo em todo o jogo.
+
+Conclusão
+
+  A implementação desta tarefa provou-se totalmente operacional, sendo que implementamos todas as funcionalidades que queriamos.
+  No entanto lamentamos o design final que,  embora aceitável, e relativamente criativo, poderia estar mais polido.
+  Utilizamos alguns artifícios no trabalho que facilitaram a realização, como a ferramenta mogrify que converte imagens em ficheiros .bmp, melhores no uso do gloss.   
+  Concluimos assim que cumprimos a tarefa de forma pelo menos satisfatória, a todos os níveis. 
+
+-}
+
+
+
+t6
+
+Introdução
+
+  Neste ficheiro estão contidas as funções relativas ao bot usado no jogo.
+  O objetivo é percorrer um dado mapa o mais rápido possível, tendo em conta que outros jogadores tentarão o mesmo.
+  Este objetivo cumpre analisando o estado do jogo (mapa e posições dos outros jogadores).
+
+Objetivos
+
+  O primeiro passo, sempre que o bot recebe um qualquer estado, é identificar se o jogador se encontra no ar ou no chão (testaAr/testaChao).
+  Dependendo do resultado o bot toma dois possiveis caminhos.
+    Se estiver no ar é chamada a função botArJoga.
+      Esta função calcula a inclinação do jogador no ar, e tenta manter esta inclinação entre 15º a 30º graus mais do que a inclinação da peça que está diretamente por baixo.
+      Este ângulo é o ideal porque é o que maximiza a velocidade, assegurando que o jogador não morre quando tocar ao chão. 
+    Por outro lado, se o jogador estiver no chão é chamada a função botChaoJoga.
+      Esta começa por testar se os atritos das peças diretamente acima e abaixo são mais baixos do que a atual(boolC/boolB).
+      Se ambos forem melhores calcula-se o melhor entre eles(melhorJog3).
+      Em qualquer situação em que não se muda de direção o bot escolhe acelerar.
+    Numa terceira situaçao, para além de estar do chão, testa-se se a peca atual é elegível para usar a cola.
+      Esta jogada é tanto melhor quanto melhor essa peça for para os outros jogadores.
+      Por exemplo, um boost é uma boa jogada, logo disparar cola aí tornará essa jogada pior para os restantes jogadores.
+      Isto testa-se com a função testaJogAtras.
+      No entanto testa-se ainda se foram disparadas colas na peça antecedente (naoTemCola), para evitar que o jogador dispare todas as colas na mesma peça.
+
+Conclusão
+
+  Ainda que limitado na profundidade a que examina o mapa, o bot construído é relativamente eficaz.
+    É rápido no ar, graças ao intervalo de ângulos específico que é utilizado.
+    Perde por não simular várias jogadas à frente, quando está no chão, mas, por observação dos torneios do site, a falta dessa capacidade não parece afetar significativamente a prestação do bot
+    Para além disso, nos mapas usadas nos testes essa habilidade parece bastante situacional.
+    É também eficaz a disparar a cola, ainda que esta jogada, nos testes, não se tenha provado tão util como inicialmente esperado.
+  Conclui-se assim que esta tarefa foi, mais uma vez, concluída satisfatóriamente, ainda que com noção de onde havia espaço para melhorar.  
