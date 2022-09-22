@@ -45,14 +45,14 @@ Finalizando, o jogo conta ainda com 2 tipos de mapas, os **padrões**, criados p
 
 ## Glossário das tarefas
 
-**TAREFA1:** ``Gerar um mapa aleatório``
+**TAREFA 1:** ``Gerar um mapa aleatório``
 
-**TAREFA2:** ``Criação dos tipos de jogadas (Andar para todas as direções, acelerar, desacelerar e disparar munições de cola para a retaguarda)``
+**TAREFA 2:** ``Criação dos tipos de jogadas (Andar para todas as direções, acelerar, desacelerar e disparar munições de cola para a retaguarda)``
 
-**TAREFA3:** ``Compressão de mapas``
+**TAREFA 3:** ``Compressão de mapas``
 
-**TAREFA4:** ``Efeito da passagem do tempo num estado do jogo``
+**TAREFA 4:** ``Efeito da passagem do tempo num estado do jogo``
 
-**TAREFA5:** ``Recriação gráfica do jogo através da biblioteca Gloss ``
+**TAREFA 5:** ``Recriação gráfica do jogo através da biblioteca Gloss ``
 
-**TAREFA6:** ``Criação do bot``
+**TAREFA 6:** ``Criação do bot``
