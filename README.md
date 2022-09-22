@@ -19,7 +19,7 @@ Finalizando, o jogo conta ainda com 2 tipos de mapas, os **padrões**, criados p
 
 ## Parte Gráfica
 
-### [Menus](https://github.com/surumkata/Motosauro/tree/main/textures/Menus)
+### [Menus](https://github.com/surumkata/Motosauro/tree/main/textures/Menu)
 ### [Motos](https://github.com/surumkata/Motosauro/tree/main/textures/Others)
 ### [Pisos](https://github.com/surumkata/Motosauro/tree/main/textures/Layers)
 
