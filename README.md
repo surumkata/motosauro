@@ -1,4 +1,4 @@
-# Projeto de Laboratórios de Informática 1 (LI1) - Recriação do jogo "ExciteBike" - Ano letivo de 2019/2020
+# Projeto de Laboratórios de Informática 1 (LI1) - Motosauro - Recriação do jogo "ExciteBike"- Ano letivo de 2019/2020
 
 Excitebike é um jogo de corrida de motocross desenvolvido pela Nintendo. Foi lançado no Japão para o Family Computer em 1984 e foi um dos títulos de lançamento para o NES em 1985.
 
