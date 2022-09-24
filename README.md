@@ -6,7 +6,7 @@
 
 **Excitebike** é um jogo de corrida de motocross desenvolvido pela Nintendo. Foi lançado no Japão para o Family Computer em 1984 e foi um dos títulos de lançamento para o NES em 1985.
 
-O objetivo deste projeto de **Laboratórios de Informática 1** era a recriação desse jogo, utilizando a linguagem de programação **Haskell**, assim, colocando em prática os ensinamentos obtidos ao longo das diferentes cadeiras do semestre, como **Programação Informal**.  Por conta das mudanças gráficas decidimos apelidar a nossa nova versão de **"Motosauro"**.
+O objetivo deste projeto de **Laboratórios de Informática 1** era a recriação desse jogo, utilizando a linguagem de programação **Haskell**, assim, colocando em prática os ensinamentos obtidos ao longo das diferentes cadeiras do semestre, como **Programação Funcional**.  Por conta das mudanças gráficas decidimos apelidar a nossa nova versão de **"Motosauro"**.
 
 Este trabalho foi realizado por Tiago Silva e Hugo Fernandes, estudantes do 1º ano de engenharia informática da Universidade do Minho no ano letivo de 2019/2020.
 
